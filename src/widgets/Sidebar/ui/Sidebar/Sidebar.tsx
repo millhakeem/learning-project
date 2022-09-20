@@ -14,8 +14,8 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     const { className } = props;
 
     const onToggle = () => {
-        setCollapsed(prev => !prev)
-    }
+        setCollapsed(prev => !prev);
+    };
 
     return (
         <div className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
@@ -25,5 +25,5 @@ export const Sidebar: FC<SidebarProps> = (props) => {
                 <LangSwitcher /> 
             </div>
         </div>
-    )
-}
+    );
+};

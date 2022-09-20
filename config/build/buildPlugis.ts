@@ -18,5 +18,5 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new webpack.HotModuleReplacementPlugin(),
-    ]
+    ];
 }
