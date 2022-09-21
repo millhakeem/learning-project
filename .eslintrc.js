@@ -1,7 +1,8 @@
 module.exports = {
     'env': {
         'browser': true,
-        'es2021': true
+        'es2021': true,
+        'jest': true
     },
     'extends': [
         'eslint:recommended',
@@ -32,6 +33,7 @@ module.exports = {
             'error',
             'always'
         ],
-        'react/react-in-jsx-scope': 'off'
+        'react/react-in-jsx-scope': 'off',
+        'max-len': ['error', { ignoreComments: true }],
     }
 };
