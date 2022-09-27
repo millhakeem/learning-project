@@ -34,6 +34,6 @@ module.exports = {
             'always'
         ],
         'react/react-in-jsx-scope': 'off',
-        'max-len': ['error', { ignoreComments: true }],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
     }
 };
