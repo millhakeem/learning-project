@@ -85,6 +85,7 @@
   },
   "loki": {
     "chromeSelector": "#root > *",
+    "diffingEngine": "pixelmatch",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
