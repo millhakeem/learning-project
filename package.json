@@ -83,9 +83,6 @@
     "react-i18next": "^11.15.5",
     "react-router-dom": "^6.2.1"
   },
-  "overrides": {
-    "chrome-remote-interface": "0.31.3"
-  },
   "loki": {
     "configurations": {
       "chrome.laptop": {
@@ -100,5 +97,8 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "overrides": {
+    "chrome-remote-interface": "0.31.3"
   }
 }
