@@ -84,6 +84,7 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
+    "chromeSelector": "#root > *",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
