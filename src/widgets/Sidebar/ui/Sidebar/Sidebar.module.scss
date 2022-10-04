@@ -19,3 +19,38 @@
   width: 100%;
   gap: 10px 0;
 }
+
+.collapseBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;;
+}
+
+.items {
+  margin: 20px  0 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    transition: .25s ease;
+    width: 0;
+  }
+}
