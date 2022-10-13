@@ -1,0 +1,14 @@
+.InputWrapper {
+    display: flex;
+}
+
+.input {
+    border: 1px solid var(--inverted-bg-color);
+    outline: none;
+    width: 100%;
+}
+
+.input::placeholder {
+    padding-left: 10px;
+    color: var(--primary-color);
+}
