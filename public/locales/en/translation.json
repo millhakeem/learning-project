@@ -8,6 +8,9 @@
     "Главная": "Home",
     "О сайте": "About",
     "Войти": "Log in",
-    "Пароль": "Username",
-    "Логин": "Password"
+    "Пароль": "Password",
+    "Логин": "Username",
+    "Форма авторизации": "Login form",
+    "Ошибка авторизации": "Incorrect username or password ",
+    "Выйти": "Logout"
 }

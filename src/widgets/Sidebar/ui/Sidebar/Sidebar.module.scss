@@ -1,54 +1,60 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
-  background: var(--inverted-bg-color);
-  position: relative;
-  transition: width 0.25s ease;
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width);
+    background: var(--inverted-bg-color);
+    position: relative;
+    transition: width 0.25s ease;
 }
 
 .switchers {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  gap: 10px 0;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 10px 0;
 }
 
 .collapseBtn {
-  position: absolute;
-  right: -32px;
-  bottom: 32px;
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
 }
 
 .items {
-  margin: 20px  0 0 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    margin: 20px 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .item {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .link {
-  margin-left: 10px;
-  opacity: 1;
+    margin-left: 10px;
+    opacity: 1;
+    white-space: nowrap;
 }
 
 .icon {
-  fill: var(--inverted-primary-color);
+    fill: var(--inverted-primary-color);
 }
 
 .collapsed {
-  width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 
-  .link {
-    opacity: 0;
-    transition: 0.25s ease;
-    width: 0;
-  }
+    .items {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .link {
+        opacity: 0;
+        transition: 0.25s ease;
+        width: 0;
+    }
 }
