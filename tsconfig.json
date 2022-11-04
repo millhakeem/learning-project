@@ -9,7 +9,8 @@
         "moduleResolution": "node",
         "baseUrl": ".",
         "paths": {
-            "*": ["./src/*"]
+            "*": ["./src/*"],
+            "entities": ["./src/entities/*"]
         },
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true
