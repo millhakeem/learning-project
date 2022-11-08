@@ -2,8 +2,7 @@ import webpack from 'webpack';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
-
+export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -13,8 +12,15 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        use: [
+            {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true,
+                },
+            },
+        ],
+        exclude: /node_modules/,
     };
 
     const fileLoader = {
@@ -26,10 +32,5 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    return [
-        fileLoader,
-        svgLoader,
-        typescriptLoader,
-        cssLoader,
-    ];
+    return [fileLoader, svgLoader, typescriptLoader, cssLoader];
 }

@@ -9,6 +9,10 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
     ],
+    globals: {
+        __IS_DEV__: true,
+        __API__: true,
+    },
     overrides: [
         {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
@@ -33,5 +37,6 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'react/display-name': 'off',
+        'no-undef': 'off',
     },
 };
