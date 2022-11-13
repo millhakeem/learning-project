@@ -13,5 +13,7 @@
     "Логин": "Username",
     "Форма авторизации": "Login form",
     "Ошибка авторизации": "Incorrect username or password ",
-    "Выйти": "Logout"
+    "Выйти": "Logout",
+    "Укажите валюту": "Choose currency",
+    "Укажите страну": "Choose country"
 }

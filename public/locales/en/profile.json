@@ -1,4 +1,14 @@
 {
     "Профиль": "User's profile",
-    "Редактировать": "Edit"
+    "Редактировать": "Edit",
+    "Отменить": "Cancel",
+    "Заголовок ошибки профиля": "Unxpected error while profile's data loading",
+    "Текст ошибки профиля": "Try to reload the page",
+    "Имя": "Enter your firstname",
+    "Фамилия": "Enter your lastname",
+    "Возраст": "Enter your age",
+    "Город": "Enter your city",
+    "Сохранить": "Save",
+    "Имя пользователя": "Enter username",
+    "Аватар": "Put here link to your picture"
 }

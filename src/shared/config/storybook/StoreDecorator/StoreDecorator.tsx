@@ -9,11 +9,8 @@ const defaultAsyncReducers: ReducersList = {
     profile: profileReducer,
 };
 
-// eslint-disable-next-line react/display-name
 export const StoreDecorator =
-    (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
-    // eslint-disable-next-line react/display-name
-    (StoryComponent: Story) =>
+    (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (StoryComponent: Story) =>
         (
             <StoreProvider
                 initialState={state}

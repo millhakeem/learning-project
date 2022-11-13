@@ -3,12 +3,22 @@
 }
 
 .input {
+  color: var(--primary-color);
+  background: var(--primary-bg-color);
   border: 1px solid var(--inverted-bg-color);
   outline: none;
   width: 100%;
   padding-left: 10px;
+
+  &:read-only {
+    border: none;
+  }
 }
 
 .input::placeholder {
-  color: var(--inverted-primary-color);
+  color: var(--primary-color);
 }
+
+// .readonly {
+//     background-color: none;
+// }
