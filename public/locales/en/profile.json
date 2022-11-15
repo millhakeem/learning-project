@@ -10,5 +10,10 @@
     "Город": "Enter your city",
     "Сохранить": "Save",
     "Имя пользователя": "Enter username",
-    "Аватар": "Put here link to your picture"
+    "Аватар": "Put here link to your picture",
+    "Ошибка сервера": "Unxpected server error",
+    "Ошибка имя или фамилия": "Your name and lastname should be filled",
+    "Ошибка страны": "Incorrect country data",
+    "Ошибка возраста": "Incorrect age",
+    "Ошибка данных": "No data was sent"
 }
