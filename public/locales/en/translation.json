@@ -1,5 +1,4 @@
 {
-    "Тестовый текст": "Example text",
     "Язык": "English",
     "Страница не найдена": "Page not found",
     "Непредвиденная ошибка": "Unexpected error",
@@ -15,5 +14,6 @@
     "Ошибка авторизации": "Incorrect username or password ",
     "Выйти": "Logout",
     "Укажите валюту": "Choose currency",
-    "Укажите страну": "Choose country"
+    "Укажите страну": "Choose country",
+    "Статьи": "Articles"
 }
