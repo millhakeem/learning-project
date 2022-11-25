@@ -1,0 +1,13 @@
+.ArticleList {
+  display: flex;
+  gap: 20px;
+}
+
+.LIST {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.GREED {
+  flex-wrap: wrap;
+}

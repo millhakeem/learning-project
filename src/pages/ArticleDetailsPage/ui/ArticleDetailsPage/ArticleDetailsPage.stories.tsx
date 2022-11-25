@@ -24,6 +24,10 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: ['IT'],
+    user: {
+        id: '1',
+        username: 'Dark Pepega',
+    },
     blocks: [
         {
             id: '1',
