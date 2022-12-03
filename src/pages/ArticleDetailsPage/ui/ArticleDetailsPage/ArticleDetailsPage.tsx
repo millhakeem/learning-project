@@ -1,4 +1,4 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
 import { memo, useCallback } from 'react';
@@ -24,6 +24,12 @@ import {
     getArticleComments,
 } from '../../model/slices/articleDetailsCommentsSlise';
 import cls from './ArticleDetailsPage.module.scss';
+import {
+    articleDetailsPageRecomendationsReducer,
+    getArticleRecomendations,
+} from '../../model/slices/articleDetailsPageRecomendationsSlise';
+import { getArticleRecomendationsLoading } from '../../model/selectors/recomendations';
+import { fetchArticleRecomendations } from '../../model/services/fetchArticlesRecomendations/fetchArticlesRecomendations';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -31,6 +37,7 @@ interface ArticleDetailsPageProps {
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsRecomendations: articleDetailsPageRecomendationsReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -39,7 +46,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
+    const recomendations = useSelector(getArticleRecomendations.selectAll);
     const commentsLoading = useSelector(getArticleCommentsLoading);
+    const recomendationsLoading = useSelector(getArticleRecomendationsLoading);
+
     const navigate = useNavigate();
 
     const onSendComment = useCallback(
@@ -55,11 +65,14 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecomendations());
     });
 
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 {t('Статья не найдена')}
             </Page>
         );
@@ -67,12 +80,28 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Назад')}
                 </Button>
                 <ArticleDetails id={id} />
-                <Text className={cls.commentTitle} title={t('Комментарии')} />
+                <Text
+                    size='size_l'
+                    className={cls.commentTitle}
+                    title={t('Рекомендуем')}
+                />
+                <ArticleList
+                    articles={recomendations}
+                    isLoading={recomendationsLoading}
+                    classname={cls.recomendations}
+                />
+                <Text
+                    size='size_l'
+                    className={cls.commentTitle}
+                    title={t('Комментарии')}
+                />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList isLoading={commentsLoading} comments={comments} />
             </Page>
