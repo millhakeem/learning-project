@@ -33,11 +33,12 @@ module.exports = {
         quotes: ['error', 'single'],
         semi: ['error', 'always'],
         'react/react-in-jsx-scope': 'off',
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'max-len': ['error', { ignoreComments: true, code: 125 }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'react/display-name': 'off',
         'no-undef': 'off',
+        'arrow-body-style': 'off',
     },
 };

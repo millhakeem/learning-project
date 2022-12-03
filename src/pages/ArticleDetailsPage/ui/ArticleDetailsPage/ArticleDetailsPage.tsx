@@ -29,6 +29,7 @@ import {
     getArticleRecomendations,
 } from '../../model/slices/articleDetailsPageRecomendationsSlise';
 import { getArticleRecomendationsLoading } from '../../model/selectors/recomendations';
+import { articlesDetailsPageReducer } from '../../model/slices';
 import { fetchArticleRecomendations } from '../../model/services/fetchArticlesRecomendations/fetchArticlesRecomendations';
 
 interface ArticleDetailsPageProps {
@@ -36,8 +37,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecomendations: articleDetailsPageRecomendationsReducer,
+    articleDetailsPage: articlesDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -96,6 +96,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     articles={recomendations}
                     isLoading={recomendationsLoading}
                     classname={cls.recomendations}
+                    target='_blank'
                 />
                 <Text
                     size='size_l'
