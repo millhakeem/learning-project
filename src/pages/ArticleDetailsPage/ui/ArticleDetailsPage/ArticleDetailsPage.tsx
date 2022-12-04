@@ -4,8 +4,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -13,24 +12,18 @@ import {
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Page } from 'widgets/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
+import { Page } from 'widgets/Page/Page';
 import { getArticleCommentsLoading } from '../../model/selectors/comments';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
-import {
-    articleDetailsCommentsReducer,
-    getArticleComments,
-} from '../../model/slices/articleDetailsCommentsSlise';
-import cls from './ArticleDetailsPage.module.scss';
-import {
-    articleDetailsPageRecomendationsReducer,
-    getArticleRecomendations,
-} from '../../model/slices/articleDetailsPageRecomendationsSlise';
 import { getArticleRecomendationsLoading } from '../../model/selectors/recomendations';
-import { articlesDetailsPageReducer } from '../../model/slices';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchArticleRecomendations } from '../../model/services/fetchArticlesRecomendations/fetchArticlesRecomendations';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
+import { articlesDetailsPageReducer } from '../../model/slices';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlise';
+import { getArticleRecomendations } from '../../model/slices/articleDetailsPageRecomendationsSlise';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -50,18 +43,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const commentsLoading = useSelector(getArticleCommentsLoading);
     const recomendationsLoading = useSelector(getArticleRecomendationsLoading);
 
-    const navigate = useNavigate();
-
     const onSendComment = useCallback(
         (text: string) => {
             dispatch(addCommentForArticle(text));
         },
         [dispatch],
     );
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -83,9 +70,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('Назад')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size='size_l'

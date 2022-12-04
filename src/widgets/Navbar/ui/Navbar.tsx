@@ -3,8 +3,11 @@ import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -32,7 +35,23 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Button className={cls.links} theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogOut}>
+                <Text
+                    className={cls.appName}
+                    title='Social App'
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    className={cls.createBtn}
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Создать статью')}
+                </AppLink>
+                <Button
+                    className={cls.links}
+                    theme={ButtonTheme.CLEAR_INVERTED}
+                    onClick={onLogOut}
+                >
                     {t('Выйти')}
                 </Button>
             </header>
@@ -41,10 +60,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button className={cls.links} theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
+            <Button
+                className={cls.links}
+                theme={ButtonTheme.CLEAR_INVERTED}
+                onClick={onShowModal}
+            >
                 {t('Войти')}
             </Button>
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     );
 });

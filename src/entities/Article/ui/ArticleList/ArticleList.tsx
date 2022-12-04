@@ -1,5 +1,5 @@
-import { t } from 'i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
@@ -24,7 +24,7 @@ const getSkeletons = (view: ArticleView) =>
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const { classname, articles, view = 'GREED', isLoading, target } = props;
-
+    const { t } = useTranslation('articles');
     const renderArticle = (article: Article) => {
         return (
             <ArticleListItem

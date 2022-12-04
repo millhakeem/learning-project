@@ -1,14 +1,23 @@
 .Navbar {
-  width: 100%;
-  height: var(--navbar-height);
-  background: var(--inverted-bg-color);
-  display: flex;
-  align-items: center;
-  padding: 20px;
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
 }
 
 .links {
-  margin-left: auto;
-  display: flex;
-  gap: 20px;
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.appName {
+    width: var(--sidebar-width);
+    margin-left: 15px;
+}
+
+.createBtn {
+    margin-left: -15px;
 }
