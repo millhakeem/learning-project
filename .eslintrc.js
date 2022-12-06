@@ -27,7 +27,12 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'react-hooks'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'react-hooks',
+        'millhakeems-plugin',
+    ],
     rules: {
         indent: ['error', 4],
         quotes: ['error', 'single'],
@@ -40,5 +45,6 @@ module.exports = {
         'react/display-name': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
+        'millhakeems-plugin/path-checker': 'error',
     },
 };
