@@ -1,6 +1,15 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+    createEntityAdapter,
+    createSlice,
+    PayloadAction,
+} from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
+import {
+    Article,
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
+} from 'entities/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
@@ -34,7 +43,10 @@ const articlePageSlice = createSlice({
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
-            localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
+            localStorage.setItem(
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
+                action.payload,
+            );
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
@@ -52,7 +64,9 @@ const articlePageSlice = createSlice({
             state.type = action.payload;
         },
         initState: (state) => {
-            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const view = localStorage.getItem(
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
+            ) as ArticleView;
             state.view = view;
             state.limit = view === 'LIST' ? 4 : 9;
             state._inited = true;
@@ -69,7 +83,7 @@ const articlePageSlice = createSlice({
         });
         builder.addCase(fetchArticlesList.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.hasMore = action.payload.length >= state.limit;
+            state.hasMore = action.payload.length >= state!.limit!;
 
             if (action.meta.arg.replace) {
                 articleAdapter.setAll(state, action.payload);
@@ -84,4 +98,5 @@ const articlePageSlice = createSlice({
     },
 });
 
-export const { reducer: articlesPageReducer, actions: articlesPageActions } = articlePageSlice;
+export const { reducer: articlesPageReducer, actions: articlesPageActions } =
+    articlePageSlice;

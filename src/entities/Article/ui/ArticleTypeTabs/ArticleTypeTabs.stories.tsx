@@ -1,4 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
@@ -9,7 +11,12 @@ export default {
     },
 } as ComponentMeta<typeof ArticleTypeTabs>;
 
-const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
+const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => (
+    <ArticleTypeTabs {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    value: 'ECONOMICS',
+};
+Normal.decorators = [ThemeDecorator(Theme.DARK)];

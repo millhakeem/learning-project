@@ -14,13 +14,16 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+    <ProfilePage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [
     StoreDecorator({
         profile: {
+            readonly: true,
             form: {
                 username: 'admin',
                 age: 34,
@@ -37,6 +40,26 @@ Normal.decorators = [
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            readonly: true,
+            form: {
+                username: 'admin',
+                age: 34,
+                first: 'Shitty',
+                lastname: 'Wizzard',
+                city: 'Biysk',
+                country: Country.Russia,
+                currency: Currency.RUB,
+            },
+        },
+    }),
+];
+
+export const DarkEditable = Template.bind({});
+DarkEditable.args = {};
+DarkEditable.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
         profile: {

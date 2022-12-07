@@ -2,7 +2,7 @@ import { ArticleList } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -18,7 +18,10 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import {
+    articlesPageReducer,
+    getArticles,
+} from '../../model/slices/articlesPageSlice';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import cls from './ArticlesPage.module.scss';
 
@@ -52,9 +55,14 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
                 className={classNames(cls.ArticlesPage, {}, [className])}
-                onScrollEnd={onLoadNextPage}>
+                onScrollEnd={onLoadNextPage}
+            >
                 <ArticlesPageFilters />
-                <ArticleList isLoading={loading} view={view} articles={articles} />
+                <ArticleList
+                    isLoading={loading}
+                    view={view}
+                    articles={articles}
+                />
             </Page>
         </DynamicModuleLoader>
     );
