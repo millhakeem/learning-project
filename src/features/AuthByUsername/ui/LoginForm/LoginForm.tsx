@@ -17,6 +17,7 @@ import {
     ReducersList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { VStack } from 'shared/ui/Stack';
 
 export interface LoginFormProps {
     className?: string;
@@ -27,7 +28,6 @@ const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-// eslint-disable-next-line react/display-name
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
@@ -59,19 +59,25 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-            <div className={classNames(cls.LoginForm, {}, [className])}>
+            <VStack
+                gap='8'
+                className={classNames(cls.LoginForm, {}, [className])}
+            >
                 <Text title={t('Форма авторизации')} />
-                {error && <Text text={t('Ошибка авторизации')} theme={TextTheme.ERROR} />}
+                {error && (
+                    <Text
+                        text={t('Ошибка авторизации')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
-                    type="text"
-                    className={cls.input}
+                    type='text'
                     placeholder={t('Логин')}
                     onChange={onChangeUsername}
                     value={username}
                 />
                 <Input
-                    type="text"
-                    className={cls.input}
+                    type='text'
                     placeholder={t('Пароль')}
                     onChange={onChangePassword}
                     value={password}
@@ -80,10 +86,11 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     onClick={onLoginClick}
                     disabled={isLoading}
                     theme={ButtonTheme.OUTLINE}
-                    className={cls.loginBtn}>
+                    className={cls.loginBtn}
+                >
                     {t('Войти')}
                 </Button>
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

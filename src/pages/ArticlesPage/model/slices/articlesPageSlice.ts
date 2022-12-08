@@ -15,21 +15,21 @@ import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 
-const articleAdapter = createEntityAdapter<Article>({
+const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
-export const getArticles = articleAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesPage || articleAdapter.getInitialState(),
+export const getArticles = articlesAdapter.getSelectors<StateSchema>(
+    (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
-const articlePageSlice = createSlice({
-    name: 'articlePageSlice',
-    initialState: articleAdapter.getInitialState<ArticlesPageSchema>({
+const articlesPageSlice = createSlice({
+    name: 'articlesPageSlice',
+    initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
         isLoading: false,
         error: undefined,
-        entities: {},
         ids: [],
+        entities: {},
         view: 'GREED',
         page: 1,
         hasMore: true,
@@ -78,17 +78,17 @@ const articlePageSlice = createSlice({
             state.isLoading = true;
 
             if (action.meta.arg.replace) {
-                articleAdapter.removeAll(state);
+                articlesAdapter.removeAll(state);
             }
         });
         builder.addCase(fetchArticlesList.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.hasMore = action.payload.length >= state!.limit!;
+            state.hasMore = action.payload.length >= state.limit;
 
             if (action.meta.arg.replace) {
-                articleAdapter.setAll(state, action.payload);
+                articlesAdapter.setAll(state, action.payload);
             } else {
-                articleAdapter.addMany(state, action.payload);
+                articlesAdapter.addMany(state, action.payload);
             }
         });
         builder.addCase(fetchArticlesList.rejected, (state, action) => {
@@ -99,4 +99,4 @@ const articlePageSlice = createSlice({
 });
 
 export const { reducer: articlesPageReducer, actions: articlesPageActions } =
-    articlePageSlice;
+    articlesPageSlice;

@@ -1,13 +1,15 @@
-.InputWrapper {
-  display: flex;
+.placeholder {
+  white-space: nowrap;
+  flex-basis: 140px;
+  flex-shrink: 0;
 }
 
 .input {
+  flex-grow: 1;
   color: var(--primary-color);
   background: var(--primary-bg-color);
   border: 1px solid var(--primary-color);
   outline: none;
-  width: 100%;
   padding-left: 10px;
 
   &:read-only {
@@ -16,9 +18,5 @@
 }
 
 .input::placeholder {
-  color: var(--primary-color);
+  color: var(--primary-bg-color);
 }
-
-// .readonly {
-//     background-color: none;
-// }

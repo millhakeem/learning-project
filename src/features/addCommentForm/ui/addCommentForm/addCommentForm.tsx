@@ -9,6 +9,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import {
     addCommentFormActions,
@@ -45,7 +46,11 @@ const addCommentForm = memo((props: addCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack
+                justify='between'
+                gap='16'
+                className={classNames(cls.AddCommentForm, {}, [className])}
+            >
                 <Input
                     className={cls.input}
                     placeholder={t('комментарий')}
@@ -53,7 +58,7 @@ const addCommentForm = memo((props: addCommentFormProps) => {
                     onChange={onCommentTextChange}
                 />
                 <Button onClick={onSendHandler}>{t('Отправить')}</Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });
