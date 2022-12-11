@@ -16,7 +16,7 @@
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:ui": "npx loki test",
         "test:ui:ok": "npx loki approve",
-        "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+        "test:ui:ci": "npx loki --requireReference update --reactUri file:./storybook-static",
         "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
         "test:ui:json": "node scripts/generate-visual-json-report.js",
         "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
@@ -88,6 +88,7 @@
         "webpack-dev-server": "^4.7.4"
     },
     "dependencies": {
+        "@headlessui/react": "^1.6.6",
         "@reduxjs/toolkit": "^1.8.0",
         "axios": "^0.26.1",
         "concurrently": "^7.5.0",
