@@ -1,36 +1,41 @@
-.ListBox {
+.Dropdown {
   position: relative;
+  display: inline-flex;
 }
 
-.trigger {
+.btn {
   background: none;
-  border: none;
   outline: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }
 
-.options {
+.menu {
+  display: flex;
+  flex-direction: column;
   background: var(--listbox-bg);
   position: absolute;
   z-index: 1000;
   border-radius: 8px;
-  box-shadow: 4px 4px 6px var(--listbox-bg);
+  border: 1px solid var(--primary-color);
   min-width: 100%;
 }
 
 .item {
-  padding: 10px 20px;
-  white-space: nowrap;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  border-radius: 8px;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .active {
-  background: var(--inverted-secondary-color);
-  border-radius: 8px;
-}
-
-.disabled {
-  opacity: 0.5;
+  background: var(--inverted-primary-color);
 }
 
 .optionsBottomRight {

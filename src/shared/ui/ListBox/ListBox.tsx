@@ -1,16 +1,16 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
+import { DropdownDirection } from '../../types/ui';
 import { classNames } from '../../lib/classNames/classNames';
 import { Button } from '../Button/Button';
 import cls from './ListBox.module.scss';
+import { HStack } from '../Stack';
 
 export interface ListBoxItem {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
     className?: string;
@@ -24,8 +24,10 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop,
+    'bottom left': cls.optionsBottomLeft,
+    'bottom right': cls.optionsBottomRight,
+    'top left': cls.optionsTopLeft,
+    'top right': cls.optionsTopRight,
 };
 
 export const ListBox = (props: ListBoxProps) => {
@@ -34,7 +36,7 @@ export const ListBox = (props: ListBoxProps) => {
         items,
         defaultValue,
         onChange,
-        direction = 'bottom',
+        direction = 'bottom right',
         value,
         readonly,
         label,
@@ -43,7 +45,8 @@ export const ListBox = (props: ListBoxProps) => {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <div>
+        <HStack gap='4'>
+            {label && <span>{label + ' >'}</span>}
             <HListBox
                 disabled={readonly}
                 as={'div'}
@@ -51,7 +54,6 @@ export const ListBox = (props: ListBoxProps) => {
                 value={value}
                 onChange={onChange}
             >
-                {label && <span className={cls.label}>{label + ' >'}</span>}
                 <HListBox.Button disabled={readonly} className={cls.trigger}>
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListBox.Button>
@@ -80,6 +82,6 @@ export const ListBox = (props: ListBoxProps) => {
                     ))}
                 </HListBox.Options>
             </HListBox>
-        </div>
+        </HStack>
     );
 };
