@@ -47,6 +47,7 @@ const addCommentForm = memo((props: addCommentFormProps) => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             <HStack
+                max
                 justify='between'
                 gap='16'
                 className={classNames(cls.AddCommentForm, {}, [className])}

@@ -15,5 +15,6 @@
     "Ошибка имя или фамилия": "Your name and lastname should be filled",
     "Ошибка страны": "Incorrect country data",
     "Ошибка возраста": "Incorrect age",
-    "Ошибка данных": "No data was sent"
+    "Ошибка данных": "No data was sent",
+    "Профиль не найден": "Profile not founded"
 }

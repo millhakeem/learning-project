@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -12,6 +12,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    id: '1',
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
@@ -25,6 +26,7 @@ Normal.decorators = [
         profile: {
             readonly: true,
             form: {
+                id: '1',
                 username: 'admin',
                 age: 34,
                 first: 'Shitty',
@@ -45,6 +47,7 @@ Dark.decorators = [
         profile: {
             readonly: true,
             form: {
+                id: '1',
                 username: 'admin',
                 age: 34,
                 first: 'Shitty',
@@ -64,6 +67,7 @@ DarkEditable.decorators = [
     StoreDecorator({
         profile: {
             form: {
+                id: '1',
                 username: 'admin',
                 age: 34,
                 first: 'Shitty',

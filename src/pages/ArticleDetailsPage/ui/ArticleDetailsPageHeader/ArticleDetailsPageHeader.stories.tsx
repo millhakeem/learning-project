@@ -16,4 +16,23 @@ const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({})];
+Normal.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+            },
+        },
+        articleDetails: {
+            data: {
+                user: {
+                    id: '1',
+                },
+            },
+        },
+    }),
+];
+
+export const CantEdit = Template.bind({});
+CantEdit.args = {};
+CantEdit.decorators = [StoreDecorator({})];

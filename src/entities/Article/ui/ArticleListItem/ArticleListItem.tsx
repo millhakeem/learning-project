@@ -96,7 +96,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 cls[view],
             ])}
         >
-            <Card>
+            <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <img
                         className={cls.img}

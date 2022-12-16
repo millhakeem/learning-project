@@ -1,5 +1,5 @@
 import { Menu } from '@headlessui/react';
-import { Fragment, memo, ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from '../../types/ui';
 import { AppLink } from '../AppLink/AppLink';
@@ -26,13 +26,13 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
     'top right': cls.optionsTopRight,
 };
 
-export const Dropdown = memo((props: DropdownProps) => {
+export const Dropdown = (props: DropdownProps) => {
     const { className, trigger, items, direction = 'bottom left' } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className])}>
+        <Menu as='div' className={classNames(cls.Dropdown, {}, [className])}>
             <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
@@ -74,4 +74,4 @@ export const Dropdown = memo((props: DropdownProps) => {
             </Menu.Items>
         </Menu>
     );
-});
+};

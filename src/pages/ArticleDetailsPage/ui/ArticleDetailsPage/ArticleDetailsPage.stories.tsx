@@ -48,8 +48,6 @@ Normal.decorators = [
     StoreDecorator({
         articleDetails: {
             data: article,
-            isLoading: false,
-            error: '',
         },
     }),
 ];
