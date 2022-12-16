@@ -25,7 +25,16 @@ export default {
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: ['/node_modules/'],
     moduleDirectories: ['node_modules'],
-    moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    moduleFileExtensions: [
+        'js',
+        'mjs',
+        'cjs',
+        'jsx',
+        'ts',
+        'tsx',
+        'json',
+        'node',
+    ],
     rootDir: '../../',
     modulePaths: ['<rootDir>src'],
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
@@ -34,6 +43,18 @@ export default {
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
     testMatch: ['<rootDir>src/**/*(*.)@(sprc|test).[tj]s?(x)'],
+    reporters: [
+        'default',
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                openReport: true,
+                inlineSource: true,
+            },
+        ],
+    ],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
