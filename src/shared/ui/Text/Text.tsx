@@ -18,6 +18,8 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+
+    'data-testid'?: string;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -28,6 +30,7 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         align = 'left',
         size = 'size_m',
+        'data-testid': dataTestId = 'Text',
     } = props;
 
     return (
@@ -39,8 +42,16 @@ export const Text = memo((props: TextProps) => {
                 cls[size],
             ])}
         >
-            {title && <p className={cls.title}>{title}</p>}
-            {text && <p className={cls.text}>{text}</p>}
+            {title && (
+                <p data-testid={`${dataTestId}.header`} className={cls.title}>
+                    {title}
+                </p>
+            )}
+            {text && (
+                <p data-testid={`${dataTestId}.paragraph`} className={cls.text}>
+                    {text}
+                </p>
+            )}
         </div>
     );
 });
