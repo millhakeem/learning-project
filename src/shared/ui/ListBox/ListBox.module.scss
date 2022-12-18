@@ -3,11 +3,18 @@
 }
 
 .trigger {
-  background: none;
-  border: none;
+  cursor: pointer;
   outline: none;
-  padding: 0;
   margin: 0;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
+  padding: 6px 15px;
+  transition: opacity 0.3s ease-in;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .options {

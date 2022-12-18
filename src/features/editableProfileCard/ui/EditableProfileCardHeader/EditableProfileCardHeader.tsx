@@ -47,7 +47,7 @@ export const EditableProfileCardHeader = memo(
             >
                 <Text title={t('Профиль')} />
                 {canEdit && (
-                    <>
+                    <div>
                         {readonly ? (
                             <Button
                                 theme={ButtonTheme.OUTLINE}
@@ -80,7 +80,7 @@ export const EditableProfileCardHeader = memo(
                                 </Button>
                             </HStack>
                         )}
-                    </>
+                    </div>
                 )}
             </HStack>
         );
