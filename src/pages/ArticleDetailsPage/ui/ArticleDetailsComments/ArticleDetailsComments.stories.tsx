@@ -8,9 +8,6 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    parameters: {
-        loki: { skip: true },
-    },
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
 const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => (
@@ -21,19 +18,4 @@ export const Normal = Template.bind({});
 Normal.args = {
     id: '1',
 };
-Normal.decorators = [
-    StoreDecorator({
-        articleDetailsPage: {
-            comments: {
-                ids: ['1'],
-                entities: {
-                    '1': {
-                        id: '1',
-                        text: 'My back is my armor',
-                        user: { id: '1', username: 'Bristleback' },
-                    },
-                },
-            },
-        },
-    }),
-];
+Normal.decorators = [StoreDecorator({})];

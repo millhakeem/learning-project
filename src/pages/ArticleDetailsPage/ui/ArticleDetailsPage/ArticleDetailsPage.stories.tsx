@@ -49,5 +49,20 @@ Normal.decorators = [
         articleDetails: {
             data: article,
         },
+        articleDetailsPage: {
+            comments: {
+                ids: ['1'],
+                entities: {
+                    '1': {
+                        id: '1',
+                        text: 'Awesome comment',
+                        user: {
+                            id: '1',
+                            username: 'Wonderful User',
+                        },
+                    },
+                },
+            },
+        },
     }),
 ];

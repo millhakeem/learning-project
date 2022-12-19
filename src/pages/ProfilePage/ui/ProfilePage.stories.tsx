@@ -12,7 +12,23 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    id: '1',
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: true,
+                form: {
+                    id: '1',
+                    username: 'admin',
+                    age: 34,
+                    first: 'Shitty',
+                    lastname: 'Wizzard',
+                    city: 'Biysk',
+                    country: Country.Russia,
+                    currency: Currency.RUB,
+                },
+            },
+        }),
+    ],
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
@@ -21,61 +37,7 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [
-    StoreDecorator({
-        profile: {
-            readonly: true,
-            form: {
-                id: '1',
-                username: 'admin',
-                age: 34,
-                first: 'Shitty',
-                lastname: 'Wizzard',
-                city: 'Biysk',
-                country: Country.Russia,
-                currency: Currency.RUB,
-            },
-        },
-    }),
-];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        profile: {
-            readonly: true,
-            form: {
-                id: '1',
-                username: 'admin',
-                age: 34,
-                first: 'Shitty',
-                lastname: 'Wizzard',
-                city: 'Biysk',
-                country: Country.Russia,
-                currency: Currency.RUB,
-            },
-        },
-    }),
-];
-
-export const DarkEditable = Template.bind({});
-DarkEditable.args = {};
-DarkEditable.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        profile: {
-            form: {
-                id: '1',
-                username: 'admin',
-                age: 34,
-                first: 'Shitty',
-                lastname: 'Wizzard',
-                city: 'Biysk',
-                country: Country.Russia,
-                currency: Currency.RUB,
-            },
-        },
-    }),
-];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
