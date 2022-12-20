@@ -3,7 +3,8 @@ import { Article } from 'entities/Article';
 import {
     ArticleBlockType,
     ArticleSortField,
-} from 'entities/Article/model/types/article';
+} from 'entities/Article/model/consts/consts';
+
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticlesPage from './ArticlesPage';
 

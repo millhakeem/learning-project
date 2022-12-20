@@ -9,7 +9,7 @@ describe('fetchArticlesList.test', () => {
             },
         });
 
-        await thunk.callthunk({ page: 1 });
+        await thunk.callthunk({});
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(thunk.dispatch).toBeCalledTimes(2);
