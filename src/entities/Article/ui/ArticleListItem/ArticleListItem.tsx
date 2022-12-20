@@ -1,3 +1,4 @@
+import { ArticleBlockType } from '../../model/consts/consts';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import EyeIcon from 'shared/assets/icons/views.svg';
@@ -11,7 +12,6 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { Text } from 'shared/ui/Text/Text';
 import {
     Article,
-    ArticleBlockType,
     ArticleTextBlock,
     ArticleView,
 } from '../../model/types/article';

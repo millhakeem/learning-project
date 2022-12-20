@@ -1,5 +1,6 @@
+import { ArticleBlockType } from '../consts/consts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { Article, ArticleBlockType } from '../types/article';
+import { Article } from '../types/article';
 import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema';
 import { articleDetailsReducer } from './articleDetailsSlice';
 
@@ -11,6 +12,10 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: ['IT'],
+    user: {
+        id: '',
+        username: '',
+    },
     blocks: [
         {
             id: '1',
@@ -81,7 +86,10 @@ describe('articleDetailsSlice.test', () => {
         };
 
         expect(
-            articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending),
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending,
+            ),
         ).toEqual({
             isLoading: true,
             error: undefined,

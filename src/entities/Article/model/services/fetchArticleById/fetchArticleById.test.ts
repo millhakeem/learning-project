@@ -1,5 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Article, ArticleBlockType } from '../../types/article';
+import { ArticleBlockType } from '../../consts/consts';
+import { Article } from '../../types/article';
 import { fetchArticleById } from './fetchArticleById';
 
 const article: Article = {
@@ -10,6 +11,10 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: ['IT'],
+    user: {
+        id: '',
+        username: '',
+    },
     blocks: [
         {
             id: '1',
