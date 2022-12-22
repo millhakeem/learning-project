@@ -1,7 +1,7 @@
 import webpack from 'webpack';
-import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
@@ -41,9 +41,9 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     return [
         fileLoader,
         svgLoader,
-        // typescriptLoader,
         codeBabelLoader,
         tsxBabelLoader,
+        // typescriptLoader,
         cssLoader,
     ];
 }

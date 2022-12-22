@@ -1,7 +1,3 @@
-.ListBox {
-  position: relative;
-}
-
 .trigger {
   cursor: pointer;
   outline: none;
@@ -29,33 +25,4 @@
 .item {
   padding: 10px 20px;
   white-space: nowrap;
-}
-
-.active {
-  background: var(--inverted-secondary-color);
-  border-radius: 8px;
-}
-
-.disabled {
-  opacity: 0.5;
-}
-
-.optionsBottomRight {
-  top: 100%;
-  left: 0;
-}
-
-.optionsBottomLeft {
-  top: 100%;
-  right: 0;
-}
-
-.optionsTopRight {
-  bottom: 100%;
-  left: 0;
-}
-
-.optionsTopLeft {
-  bottom: 100%;
-  right: 0;
 }

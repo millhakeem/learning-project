@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ProfileCard } from 'entities/Profile';
 import {
     DynamicModuleLoader,
@@ -22,6 +21,7 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from 'shared/ui/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -35,12 +35,13 @@ interface EditableProfileCardProps {
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { className, id } = props;
     const { t } = useTranslation('profile');
+
+    const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileLoading);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
-    const dispatch = useAppDispatch();
 
     const validateProfileErrorsTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),

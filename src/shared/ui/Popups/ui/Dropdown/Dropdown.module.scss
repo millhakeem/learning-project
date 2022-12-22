@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  background: var(--listbox-bg);
+  position: absolute;
+  z-index: 1000;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  min-width: 100%;
+}
+
+.item {
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  border-radius: 8px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
