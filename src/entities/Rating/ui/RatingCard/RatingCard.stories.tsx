@@ -19,3 +19,11 @@ Normal.args = {
     title: 'Оставьте отзыв',
     hasFeedback: true,
 };
+
+export const WithStars = Template.bind({});
+WithStars.args = {
+    feedbackTitle: 'Заголовок',
+    title: 'Оставьте отзыв',
+    hasFeedback: true,
+    rate: 3,
+};

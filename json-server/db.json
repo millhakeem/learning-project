@@ -651,5 +651,76 @@
             "username": "Slitherin",
             "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
         }
+    ],
+    "article-ratings": [
+        {
+            "id": "1",
+            "rate": 4,
+            "feedback": "Хорошая статья",
+            "userId": "1",
+            "articleId": "1"
+        },
+        {
+            "id": "2",
+            "rate": 4,
+            "feedback": "Хорошая статья",
+            "userId": "1",
+            "articleId": "2"
+        },
+        {
+            "userId": "1",
+            "articleId": "3",
+            "rate": 3,
+            "id": "cMwT1uL"
+        },
+        {
+            "userId": "1",
+            "articleId": "7",
+            "rate": 5,
+            "feedback": "Great article!",
+            "id": "JrgBKYW"
+        },
+        {
+            "userId": "1",
+            "articleId": "10",
+            "rate": 3,
+            "id": "28P6u7P"
+        },
+        {
+            "userId": "1",
+            "articleId": "11",
+            "rate": 3,
+            "id": "VV3tDZz"
+        },
+        {
+            "userId": "1",
+            "articleId": "4",
+            "rate": 3,
+            "feedback": "Very nice",
+            "id": "Ahga26T"
+        }
+    ],
+    "profile-ratings": [
+        {
+            "id": "1",
+            "rate": 4,
+            "feedback": "Хорошая статья",
+            "userId": "1",
+            "profileId": "1"
+        },
+        {
+            "id": "2",
+            "rate": 4,
+            "feedback": "Хорошая статья",
+            "userId": "1",
+            "profileId": "2"
+        },
+        {
+            "id": "3",
+            "userId": "1",
+            "profileId": "3",
+            "rate": 3,
+            "feedback": "Not founded"
+        }
     ]
 }
