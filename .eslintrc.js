@@ -46,5 +46,6 @@ module.exports = {
         'no-undef': 'off',
         'arrow-body-style': 'off',
         'millhakeems-plugin/path-checker': ['error', { alias: '@' }],
+        'millhakeems-plugin/public-api-imports': ['error', { alias: '@' }],
     },
 };
