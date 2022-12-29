@@ -16,16 +16,6 @@ const Template: ComponentStory<typeof ProfileRating> = (args) => (
     <ProfileRating {...args} />
 );
 
-const data = [
-    {
-        id: '1',
-        profileId: '1',
-        userId: '1',
-        rate: 4,
-        feedback: 'Хорошая статья',
-    },
-];
-
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({})];
@@ -49,7 +39,7 @@ Rated.parameters = {
             url: `${__API__}/profile-ratings?userId=1&profileId=1`,
             method: 'GET',
             status: 200,
-            response: data,
+            response: [{ rate: 4 }],
         },
     ],
 };
