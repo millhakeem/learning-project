@@ -45,6 +45,6 @@ module.exports = {
         'react/display-name': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
-        'millhakeems-plugin/path-checker': 'error',
+        'millhakeems-plugin/path-checker': ['error', { alias: '@' }],
     },
 };
