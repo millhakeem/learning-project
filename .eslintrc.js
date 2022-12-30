@@ -57,5 +57,12 @@ module.exports = {
                 ],
             },
         ],
+        'millhakeems-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
     },
 };
