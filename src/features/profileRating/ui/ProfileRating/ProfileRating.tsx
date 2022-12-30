@@ -25,8 +25,6 @@ export const ProfileRating = memo((props: ProfileRatingProps) => {
         userId: userData?.id ?? '',
     });
 
-    console.log(data);
-
     const [rateProfileMutation] = useRateProfile();
 
     const handlerateProfile = useCallback(
