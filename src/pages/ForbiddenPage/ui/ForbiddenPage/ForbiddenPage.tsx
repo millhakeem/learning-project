@@ -1,11 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from '@/app/providers/router/config/routeConfig';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text/Text';
 import { Page } from '@/widgets/Page';
+import { RoutePath } from '@/shared/const/router';
 
 interface ForbiddenPageProps {
     className?: string;
