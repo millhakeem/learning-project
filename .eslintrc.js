@@ -32,11 +32,14 @@ module.exports = {
         '@typescript-eslint',
         'react-hooks',
         'millhakeems-plugin',
+        'unused-imports',
+        'import',
     ],
     rules: {
         indent: ['error', 4],
         quotes: ['error', 'single'],
         semi: ['error', 'always'],
+        'unused-imports/no-unused-imports': 'error',
         'react/react-in-jsx-scope': 'off',
         'max-len': ['error', { ignoreComments: true, code: 125 }],
         'react-hooks/rules-of-hooks': 'error',
@@ -62,6 +65,23 @@ module.exports = {
             {
                 alias: '@',
                 ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: false,
+                },
             },
         ],
     },

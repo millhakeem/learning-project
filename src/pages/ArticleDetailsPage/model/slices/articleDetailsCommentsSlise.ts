@@ -3,10 +3,12 @@ import {
     createSlice,
     PayloadAction,
 } from '@reduxjs/toolkit';
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { Comment } from '@/entities/Comment';
+
 import { fetchCommentsByArticleId } from '../services/fetchCommentByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Comment } from '@/entities/Comment';
 
 const commentAdapter = createEntityAdapter<Comment>({
     selectId: (comment) => comment.id,
