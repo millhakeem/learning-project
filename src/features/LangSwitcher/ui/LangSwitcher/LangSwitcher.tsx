@@ -1,8 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import cls from './LangSwitcher.module.scss';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import cls from './LangSwitcher.module.scss';
 export interface LangSwitcherProps {
     className?: string;
 }

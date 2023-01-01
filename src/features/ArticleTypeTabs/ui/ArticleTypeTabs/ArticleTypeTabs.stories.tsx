@@ -1,10 +1,12 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+
 export default {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'features/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
     argTypes: {
         backgroundColor: { control: 'color' },

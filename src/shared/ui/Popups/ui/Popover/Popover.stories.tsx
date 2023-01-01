@@ -1,7 +1,9 @@
 /* eslint-disable quotes */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Button } from '../../../Button/Button';
 import { Text } from '../../../Text/Text';
+
 import { Popover } from './Popover';
 
 export default {

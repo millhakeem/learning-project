@@ -1,11 +1,13 @@
 import { memo } from 'react';
+
+import cls from './ArticleViewSelector.module.scss';
+
+import { ArticleView } from '@/entities/Article';
 import GreedIcon from '@/shared/assets/icons/greed.svg';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { ArticleView } from '../../model/types/article';
-import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
     className?: string;
@@ -37,10 +39,13 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 <Button
                     key={type.view}
                     theme={ButtonTheme.CLEAR}
-                    onClick={onChangeView(type.view as ArticleView)}>
+                    onClick={onChangeView(type.view as ArticleView)}
+                >
                     <Icon
                         Svg={type.icon}
-                        className={classNames('', { [cls.notSelected]: type.view !== view })}
+                        className={classNames('', {
+                            [cls.notSelected]: type.view !== view,
+                        })}
                     />
                 </Button>
             ))}

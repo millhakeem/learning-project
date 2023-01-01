@@ -1,8 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
+
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 export default {
-    title: 'entities/Article/ArticleViewSelector',
+    title: 'features/Article/ArticleViewSelector',
     component: ArticleViewSelector,
     argTypes: {
         backgroundColor: { control: 'color' },

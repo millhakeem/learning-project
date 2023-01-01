@@ -1,7 +1,10 @@
 import { InputHTMLAttributes, memo } from 'react';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+
 import { HStack } from '../Stack';
+
 import cls from './Input.module.scss';
+
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,

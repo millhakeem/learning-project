@@ -1,17 +1,19 @@
-import { CommentList } from '@/entities/Comment';
-import { AddCommentForm } from '@/features/addCommentForm';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import { getArticleCommentsLoading } from '../../model/selectors/comments';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlise';
+
+import { CommentList } from '@/entities/Comment';
+import { AddCommentForm } from '@/features/addCommentForm';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
-import { getArticleCommentsLoading } from '../../model/selectors/comments';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
-import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlise';
 
 interface ArticleDetailsCommentsProps {
     className?: string;

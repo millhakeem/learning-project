@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
+
+import { EditableProfileCard } from '@/features/editableProfileCard';
+import { ProfileRating } from '@/features/profileRating';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
-import { ProfileRating } from '@/features/profileRating';
 
 interface ProfilePageProps {
     className?: string;
