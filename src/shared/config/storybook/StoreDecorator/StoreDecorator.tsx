@@ -1,13 +1,14 @@
 /* eslint-disable indent */
 import { Story } from '@storybook/react';
+
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/testing';
-import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
 import { articlesDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 import { articlesPageReducer } from '@/pages/ArticlesPage/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { profileReducer } from '@/features/editableProfileCard/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,

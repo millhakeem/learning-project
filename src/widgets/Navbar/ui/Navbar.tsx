@@ -1,17 +1,19 @@
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+
+import cls from './Navbar.module.scss';
+
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
-import { memo, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -40,7 +42,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 />
                 <AppLink
                     className={cls.createBtn}
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                 >
                     {t('Создать статью')}
