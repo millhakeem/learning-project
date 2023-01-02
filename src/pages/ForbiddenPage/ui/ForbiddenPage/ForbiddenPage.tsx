@@ -17,7 +17,10 @@ const ForbiddenPage = memo((props: ForbiddenPageProps) => {
     const { t } = useTranslation('forbidden');
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page
+            data-testid='ForbiddenPage'
+            className={classNames('', {}, [className])}
+        >
             <VStack max gap='16' align='center'>
                 <Text title={t('Запрещенная страница')} size='size_l' />
                 <AppLink to={getRouteMain()}>
