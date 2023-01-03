@@ -42,7 +42,7 @@ describe('app/router/AppRouter', () => {
         ComponentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
-                user: { _inited: true, authData: {} },
+                user: { _inited: true, authData: { id: '1' } },
             },
         });
 
