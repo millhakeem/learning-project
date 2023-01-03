@@ -26,6 +26,7 @@ const article: Article = {
     user: {
         id: '1',
         username: 'Dark Pepega',
+        avatar: '',
     },
     blocks: [
         {

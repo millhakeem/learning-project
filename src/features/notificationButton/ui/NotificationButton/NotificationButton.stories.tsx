@@ -28,6 +28,36 @@ const Template: ComponentStory<typeof NotificationButton> = (args) => (
     <NotificationButton {...args} />
 );
 
+const response = [
+    {
+        id: '1',
+        title: 'Уведомление 1',
+        description: 'Произошло какое-то событие',
+    },
+    {
+        id: '2',
+        title: 'Уведомление 2',
+        description: 'Произошло какое-то событие',
+        href: 'admin',
+    },
+    {
+        id: '3',
+        title: 'Уведомление 3',
+        description: 'Произошло какое-то событие',
+        href: 'admin',
+    },
+];
+
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({})];
+Normal.parameters = {
+    mockData: [
+        {
+            url: `${__API__}/notifications`,
+            method: 'GET',
+            status: 200,
+            response: response,
+        },
+    ],
+};

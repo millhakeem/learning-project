@@ -8,6 +8,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:storybook/recommended',
     ],
     globals: {
         __IS_DEV__: true,
@@ -41,14 +42,25 @@ module.exports = {
         semi: ['error', 'always'],
         'unused-imports/no-unused-imports': 'error',
         'react/react-in-jsx-scope': 'off',
-        'max-len': ['error', { ignoreComments: true, code: 125 }],
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 125,
+            },
+        ],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'react/display-name': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
-        'millhakeems-plugin/path-checker': ['error', { alias: '@' }],
+        'millhakeems-plugin/path-checker': [
+            'error',
+            {
+                alias: '@',
+            },
+        ],
         'millhakeems-plugin/public-api-imports': [
             'error',
             {
