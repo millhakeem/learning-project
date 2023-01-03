@@ -32,12 +32,9 @@ describe('app/router/AppRouter', () => {
     test('User without auth  should have be redirected to Main page', async () => {
         ComponentRender(<AppRouter />, {
             route: getRouteProfile('1'),
-            initialState: {
-                user: { _inited: true, authData: {} },
-            },
         });
 
-        const page = await screen.findByTestId('ProfilePage');
+        const page = await screen.findByTestId('MainPage');
         expect(page).toBeInTheDocument();
     });
 
