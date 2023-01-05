@@ -1,7 +1,8 @@
-// eslint-disable-next-line millhakeems-plugin/layer-imports
+/* eslint-disable millhakeems-plugin/layer-imports */
+import { Story } from '@storybook/react';
+
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Theme } from '@/shared/const/theme';
-import { Story } from '@storybook/react';
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) =>
     (
