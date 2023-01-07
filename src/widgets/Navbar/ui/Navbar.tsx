@@ -64,7 +64,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             />
             <Button
                 className={cls.loginBtn}
-                theme={ButtonTheme.CLEAR_INVERTED}
+                theme={ButtonTheme.CLEAR}
                 onClick={onShowModal}
             >
                 {t('Войти')}

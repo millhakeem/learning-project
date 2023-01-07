@@ -3,6 +3,7 @@
   outline: none;
   margin: 0;
   border: 1px solid var(--primary-color);
+  border-radius: 8px;
   color: var(--primary-color);
   background: none;
   padding: 6px 15px;
@@ -17,8 +18,8 @@
   background: var(--listbox-bg);
   position: absolute;
   z-index: 1000;
+  border: 1px solid var(--primary-color);
   border-radius: 8px;
-  box-shadow: 4px 4px 6px var(--listbox-bg);
   min-width: 100%;
 }
 

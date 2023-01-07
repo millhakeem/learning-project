@@ -12,18 +12,16 @@ import {
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 
-import cls from './ArticlesPageFilters.module.scss';
-
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ArticlesPageFiltersProps {
     className?: string;
@@ -89,8 +87,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     );
 
     return (
-        <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-            <div className={cls.sortWrapper}>
+        <VStack gap='16' className={className}>
+            <HStack max justify='between'>
                 <ArticleSortSelector
                     onChangeOrder={onChangeOrder}
                     onChangeSort={onChangeSort}
@@ -98,8 +96,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
                     sort={sort}
                 />
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
-            </div>
-            <Card className={cls.search}>
+            </HStack>
+            <Card max>
                 <Input
                     placeholder={t('Поиск')}
                     value={search}
@@ -107,6 +105,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
                 />
             </Card>
             <ArticleTypeTabs onChangeType={onChangeType} value={type} />
-        </div>
+        </VStack>
     );
 });

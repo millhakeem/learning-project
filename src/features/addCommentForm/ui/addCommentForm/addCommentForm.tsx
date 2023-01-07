@@ -16,7 +16,7 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { HStack } from '@/shared/ui/Stack';
 
@@ -64,6 +64,7 @@ const addCommentForm = memo((props: addCommentFormProps) => {
                     onChange={onCommentTextChange}
                 />
                 <Button
+                    theme={ButtonTheme.BACKGROUND_INVERTED}
                     data-testid='AddCommentForm.Button'
                     onClick={onSendHandler}
                 >

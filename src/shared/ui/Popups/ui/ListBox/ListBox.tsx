@@ -73,8 +73,8 @@ export const ListBox = (props: ListBoxProps) => {
                                         [popupCls.disabled]: item.disabled,
                                     })}
                                 >
-                                    {selected && <>✓&nbsp;</>}
                                     {item.content}
+                                    {selected && <>&nbsp;✓</>}
                                 </li>
                             )}
                         </HListBox.Option>

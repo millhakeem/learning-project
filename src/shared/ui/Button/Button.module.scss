@@ -2,8 +2,9 @@
   cursor: pointer;
   color: var(--primary-color);
   padding: 6px 15px;
+  border-radius: 8px;
 
-  &:hover {
+  &:hover:not(:disabled) {
     opacity: 0.8;
     fill-opacity: 80%;
     stroke-opacity: 80%;
@@ -18,10 +19,6 @@
   outline: none;
 }
 
-.clearInverted {
-  color: var(--inverted-primary-color);
-}
-
 .outline {
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
@@ -34,19 +31,15 @@
   background: none;
 }
 
-.background {
-  background: var(--bg-color);
-  color: var(--primary-color);
-}
-
 .backgroundInverted {
   background: var(--inverted-bg-color);
-  color: var(--inverted-primary-color);
+  color: var(--primary-color);
   border: none;
 }
 
 .square {
   padding: 0;
+  border-radius: 0;
 }
 
 .square.size_m {
@@ -78,4 +71,5 @@
 
 .disabled {
   opacity: 0.5;
+  cursor: auto;
 }
