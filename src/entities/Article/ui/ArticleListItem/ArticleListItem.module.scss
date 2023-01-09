@@ -1,6 +1,5 @@
 .ArticleListItem {
   transition: all 0.2s linear;
-  cursor: pointer;
 }
 
 .LIST {
@@ -40,7 +39,7 @@
   }
 
   .textBlock {
-    max-height: 200px;
+    max-height: 210px;
     overflow-y: hidden;
   }
 }

@@ -1,6 +1,5 @@
 .item {
   display: flex;
-  align-items: center;
 }
 
 .link {
@@ -16,7 +15,6 @@
 .collapsed {
   .link {
     opacity: 0;
-    transition: 0.25s ease;
     width: 0;
   }
 }

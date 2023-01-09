@@ -1,20 +1,20 @@
 .app_light_theme {
-  --bg-color: #4282a3;
-  --inverted-bg-color: #045985;
-  --primary-color: #fff;
-  --secondary-color: #eee;
+  --bg-color: #fff;
+  --inverted-bg-color: #f1f1f1;
+  --primary-color: #333;
+  --secondary-color: #222;
   --accent: #059464;
 
   // skeleton
-  --skeleton-color: #fff;
+  --skeleton-color: #000;
   --skeleton-shadow: rgba(0 0 0 / 20%);
 
   // code
-  --code-bg: #045985;
+  --code-bg: #f1f1f1;
 
   // card
-  --card-bg: #045985;
+  --card-bg: #f1f1f1;
 
   // listbox
-  --listbox-bg: #4282a3;
+  --listbox-bg: #fff;
 }

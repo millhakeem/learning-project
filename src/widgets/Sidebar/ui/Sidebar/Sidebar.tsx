@@ -42,22 +42,21 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 className,
             ])}
         >
-            <Button
-                data-testid='sidebar-toggle'
-                onClick={onToggle}
-                className={cls.collapseBtn}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-                square
-                size={ButtonSize.L}
-            >
-                {collapsed ? '>' : '<'}
-            </Button>
             <VStack role={'navigation'} gap='8' className={cls.items}>
                 {itemList}
             </VStack>
             <VStack gap='8' align='center' className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher />
+                <Button
+                    data-testid='sidebar-toggle'
+                    onClick={onToggle}
+                    theme={ButtonTheme.BACKGROUND_INVERTED}
+                    square
+                    size={ButtonSize.L}
+                >
+                    {collapsed ? '>>' : '<<'}
+                </Button>
             </VStack>
         </section>
     );
