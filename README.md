@@ -30,6 +30,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 -   `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
 -   `npm run storybook` - запуск Storybook
 -   `npm run storybook:build` - Сборка storybook билда
+-   `npm run test:e2e` - Запуск е2е тестов с Cypress
 -   `npm run prepare` - прекоммит хуки
 -   `npm run generate:slice` - Скрипт для генерации FSD слайсов
 
@@ -64,8 +65,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 3. Скриншотное тестирование с loki `npm run test:ui`
 4. e2e тестирование с Cypress `npm run test:e2e`
 
-Подробнее о тестах - [документация тестирование](/docs/tests.md)
-
 ---
 
 ## Линтинг
@@ -74,7 +73,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов используется
-собственный eslint plugin _eslint-plugin-ulbi-tv-plugin_, который содержит 3
+собственный eslint plugin _eslint-plugin-millhakeems-plugin_, который содержит 3
 правила
 
 1. path-checker - запрещает использовать абсолютные импорты в рамках одного
@@ -82,7 +81,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 2. layer-imports - проверяет корректность использования слоев с точки зрения FSD
    (например widgets нельзя использовать в features и entitites)
 3. public-api-imports - разрешает импорт из других модулей только из public api.
-   Имеет auto fix
 
 ##### Запуск линтеров
 
@@ -103,8 +101,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 Запустить сторибук можно командой:
 
 -   `npm run storybook`
-
-Подробнее о [Storybook](/docs/storybook.md)
 
 Пример:
 
