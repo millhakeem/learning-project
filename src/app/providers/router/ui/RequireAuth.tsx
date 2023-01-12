@@ -5,12 +5,12 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { getUserAuthData, getUserRoles, UserRole } from '@/entities/User';
 import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
-interface RequireAuthrops {
+interface RequireAuthProps {
     children: JSX.Element;
     roles?: UserRole[];
 }
 
-export function RequireAuth({ children, roles }: RequireAuthrops) {
+export function RequireAuth({ children, roles }: RequireAuthProps) {
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
     const userRoles = useSelector(getUserRoles);
