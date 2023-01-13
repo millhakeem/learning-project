@@ -511,6 +511,60 @@
                     ]
                 }
             ]
+        },
+        {
+            "article": {
+                "img": "https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480",
+                "title": "Привет",
+                "subtitle": "Я создал статью",
+                "blocks": [],
+                "type": ["ALL"],
+                "user": {
+                    "id": "1",
+                    "username": "admin",
+                    "password": "123",
+                    "roles": ["ADMIN"],
+                    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                },
+                "createdAt": "13.01.2023",
+                "views": 0
+            },
+            "id": "LNtr0ed"
+        },
+        {
+            "article": {
+                "img": "https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480",
+                "title": "Cnfnmz",
+                "subtitle": "fdbgbg",
+                "blocks": [],
+                "type": ["ALL"],
+                "user": {
+                    "id": "1",
+                    "username": "admin",
+                    "password": "123",
+                    "roles": ["ADMIN"],
+                    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                },
+                "createdAt": "13.01.2023",
+                "views": 0
+            },
+            "id": "IcOCHAF"
+        },
+        {
+            "article": {
+                "img": "hnhgnhn",
+                "title": "hnhnhgnh",
+                "subtitle": "hgnsdnhgdnh",
+                "blocks": [],
+                "type": ["IT"],
+                "user": {
+                    "id": "1",
+                    "username": "admin"
+                },
+                "createdAt": "13.01.2023",
+                "views": 0
+            },
+            "id": "vJluw95"
         }
     ],
     "comments": [
